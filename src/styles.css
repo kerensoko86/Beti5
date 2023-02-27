@@ -1,0 +1,27 @@
+.App {
+  font-family: arial;
+  text-align: center;
+}
+
+body {
+  font-family: arial;
+}
+
+.switchInput {
+  background-color: yellow;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid black;
+  width: fit-content;
+}
+
+.bookItem {
+  margin: 10px 0;
+}
+
+.bookAuthor {
+  color: blueviolet;
+}
+.bookName {
+  font-weight: bold;
+}
