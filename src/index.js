@@ -1,15 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom";
-import BooksViewModel from "./Components/Books/ViewModel/Books.ctrl";
+import { isEmpty } from "lodash";
 import "./styles.css";
 
-import BooksMain from "./Components/Books/index";
+import BooksViewModel from "./Components/Books/ViewModel/Books.ctrl";
+import BookList from "./Components/Books/View/BookList";
+import MainButton from "./Components/Common/Buttons/MainButton";
+
+import TypeOfBooks from "./Components/Books/ViewModel/Books.type";
+import AddBook from "./Components/Books/View/AddBook";
+import SwitchBookTypes from "./Components/Books/View/SwitchBookTypes";
+
 export const Context = React.createContext({});
 
 const App = () => {
+  const context = useContext(Context);
+
   return (
     <div>
-      <BooksMain />
+      <SwitchBookTypes context={context} TypeOfBooks={TypeOfBooks} />
+      <BookList list={context.list} />
+      <hr />
+      <AddBook newBook={context.newBook} handleChange={context.handleChange} />
+      <MainButton
+        value={"Add"}
+        type="submit"
+        handleClick={() => context.addBook(context.newBook)}
+        disabled={
+          isEmpty(context.newBook.name) || isEmpty(context.newBook.author)
+        }
+      />
     </div>
   );
 };

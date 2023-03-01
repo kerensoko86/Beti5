@@ -10,10 +10,9 @@ export default class ApiGateway {
     const response = await fetch(`${API_BASE}${path}`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
-        // 'Content-Type': 'application/x-www-form-urlencoded',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     });
     const dto = response.json();
     return dto;

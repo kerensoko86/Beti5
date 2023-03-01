@@ -8,7 +8,7 @@ const RadioInput = ({ lableName, value, handleClick, checked, name }) => {
         type="radio"
         name={name}
         value={value}
-        checked={checked}
+        defaultChecked={checked}
         onClick={handleClick}
       />
     </label>

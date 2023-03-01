@@ -7,6 +7,10 @@ body {
   font-family: arial;
 }
 
+label {
+  margin: 3px;
+}
+
 .switchInput {
   background-color: yellow;
   padding: 5px;
@@ -24,4 +28,8 @@ body {
 }
 .bookName {
   font-weight: bold;
+}
+
+.textInput {
+  margin-left: 5px;
 }
