@@ -18,7 +18,11 @@ const App = () => {
 
   return (
     <div>
-      <SwitchBookTypes context={context} TypeOfBooks={TypeOfBooks} />
+      <SwitchBookTypes
+        handleChange={context.setBooksType}
+        TypeOfBooks={TypeOfBooks}
+        booksType={context.booksType}
+      />
       <BookList list={context.list} />
       <hr />
       <AddBook newBook={context.newBook} handleChange={context.handleChange} />
